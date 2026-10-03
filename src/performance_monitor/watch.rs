@@ -85,7 +85,7 @@ impl<const SIZE: usize> Watch<SIZE> {
     }
 
     pub fn get_viewer_data(&mut self) -> WatchViewerData<SIZE> {
-        self.validate();
+        // self.validate();
         WatchViewerData {
             last_update_time: self.last_update_time,
             update_time: self.update_time,
