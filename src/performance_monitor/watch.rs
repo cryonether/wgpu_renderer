@@ -72,7 +72,7 @@ impl<const SIZE: usize> Watch<SIZE> {
         self.index_end = 0;
     }
 
-    fn validate(&mut self) {
+    fn _validate(&mut self) {
         for i in 0..SIZE {
             if self.watch_points[i].start > self.watch_points[i].stop
                 || self.watch_points[i].stop > self.update_time
