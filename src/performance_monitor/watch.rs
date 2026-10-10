@@ -32,6 +32,21 @@ impl<const SIZE: usize> Watch<SIZE> {
         }
     }
 
+    pub fn start_index(&mut self, index: usize, name: &'static str) {
+        if index < SIZE {
+            let now = instant::Instant::now();
+            self.watch_points[index].start = now;
+            self.watch_points[index].name = name;
+        }
+    }
+
+    pub fn stop_index(&mut self, index: usize) {
+        if index < SIZE {
+            let now = instant::Instant::now();
+            self.watch_points[index].stop = now;
+        }
+    }
+
     pub fn start(&mut self, name: &'static str) {
         assert!(self.index_start < SIZE);
 
